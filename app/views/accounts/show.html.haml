@@ -1,0 +1,33 @@
+= render 'accounts/meta', account: @account, newer_url: @newer_url, older_url: @older_url
+
+= render 'header', account: @account, with_bio: true
+
+.grid
+  .column-0
+    .h-feed
+      %data.p-name{ value: "#{@account.username} on #{site_hostname}" }/
+
+      .account-section-headline
+        = active_link_to t('accounts.posts_tab_heading'), short_account_url(@account)
+        = active_link_to t('accounts.posts_with_replies'), short_account_with_replies_url(@account)
+        = active_link_to t('accounts.media'), short_account_media_url(@account)
+
+      - if user_signed_in? && @account.blocking?(current_account)
+        .nothing-here.nothing-here--under-tabs= t('accounts.unavailable')
+      - elsif @statuses.empty?
+        = nothing_here 'nothing-here--under-tabs'
+      - else
+        .activity-stream
+          - if params[:page].to_i.zero?
+            = render partial: 'stream_entries/status', collection: @pinned_statuses, as: :status, locals: { pinned: true }
+
+          - if @newer_url
+            .entry= link_to_more @newer_url
+
+          = render partial: 'stream_entries/status', collection: @statuses, as: :status
+
+          - if @older_url
+            .entry= link_to_more @older_url
+
+  .column-1
+    = render 'bio', account: @account

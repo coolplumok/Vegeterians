@@ -1,0 +1,8 @@
+- user_facing_flashes.each do |key, value|
+  .flash-message{ class: key }
+    %strong= value
+
+    - if key == 'alert'
+      %button{ class: 'close', :onclick => 'onCloseAlert(this)' }
+        %span{ 'aria-hidden': true }
+          &times

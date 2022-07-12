@@ -1,0 +1,19 @@
+%tr
+  %td{:align => "center"}
+    %h1{:style => "margin:0;font-weight:bold;font-size:30px;color:#444;text-align:center;"}= t 'notification_mailer.follow.title'
+
+%tr
+  %td{:align => "center", :cellspacing => "0", :style => "vertical-align:middle"}
+    %table
+      %tbody
+        %tr
+          %p{:style => "font-size:16px;font-weight:600;color:#000;margin:15px 0 0;text-align:center;"}= t('notification_mailer.follow.body', name: @account.acct)
+
+%tr
+  %td{:align => "center", :cellspacing => "0", :style => "vertical-align:middle;padding-top:10px;padding-bottom:30px;"}
+    %table{ align: 'center', cellspacing: 0, cellpadding: 0 }
+      %tbody
+        %tr
+          %td{ :style => "background-color:#30CE7D;height:56px;border-radius:9999px;color:#fff;" }
+            = link_to web_url("#{@account.username}"), :style => "height:56px;padding:20px 30px;text-decoration:none;color:#fff;font-size:16px;margin:0;" do
+              %span{ :style => "color:#fff;font-size:16px;margin:0;" }= t 'application_mailer.view_profile'

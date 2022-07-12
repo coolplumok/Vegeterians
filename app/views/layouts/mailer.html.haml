@@ -1,0 +1,96 @@
+!!!
+%html{ lang: 'en' }
+  %head
+    %meta{ 'http-equiv' => 'Content-Type', 'content' => 'text/html; charset=utf-8' }/
+    %meta{ name: 'viewport', content: 'width=device-width, initial-scale=1.0, shrink-to-fit=no' }
+
+    %title/
+
+    %style{ type: 'text/css' }
+      :css
+        body {
+          font-family: system-ui, -apple-system, BlinkMacSystemFont, Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+        }
+        a,
+        span,
+        p,
+        div,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+          font-family: system-ui, -apple-system, BlinkMacSystemFont, Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+        }
+        a:hover,
+        a:active,
+        a:focus {
+          outline: 0;
+        }
+        .in-email-status a {
+          color: #3BCD80;
+          font-weight: 600;
+        }
+        span.MsoHyperlink {
+          mso-style-priority: 99;
+          color: inherit;
+        }
+        span.MsoHyperlinkFollowed {
+          mso-style-priority: 99;
+          color: inherit;
+        }
+
+  %body{ :style => "margin:0;padding:0;background-color:#eee;font-family: system-ui, -apple-system, BlinkMacSystemFont, Roboto, sans-serif;" }
+    %table{:cellspacing => "0", :style => "margin:0 auto;width:100%;border-collapse:collapse;background-color:#eee;"}
+      %tbody
+        %tr
+          %td{:align => "center", :style => "padding:20px 23px 0 23px"}
+            %table{:style => "background-color:#fff;margin:0 auto;border-radius:5px;border-collapse:collapse", :width => "560"}
+              %tbody
+                %tr
+                  %td{:align => "center"}
+                    %table{:style => "margin:0 auto", :width => "500"}
+                      %tbody
+                        %tr
+                          %td{:align => "center", :style => "padding:40px 0 35px 0"}
+                            %a{:href => "https://Vegeterians.live", :style => "color:#3ACD80;text-decoration:none;outline:0;", :target => "_blank"}
+                              = image_tag full_pack_url('media/images/mailer/logo_sm_brand.png'), alt: 'Vegeterians.live', border: "0", height: 75, width: 75, :style => "height:75px;width:75px;"
+
+                        = yield
+
+        %tr
+          %td{:align => "center", :style => "padding-top:20px"}
+            %table{:style => "margin:0 auto;border-collapse:collapse;background-color:#fff;border-radius:5px", :width => "560"}
+              %tbody
+                %tr
+                  %td{:colspan => "4", :style => "vertical-align:middle;background-color:#ccc;border-radius:5px;"}
+                    %table{:style => "background-color:#ccc;width:100%;border-radius:5px;border-collapse:collapse"}
+                      %tbody
+                        %tr
+                          %td{:align => "center", :style => "vertical-align:middle;padding:22px 0;"}
+                            %p{:style => "color:#fff;font-size:17px;margin:0;"} Questions? Simply email support@Vegeterians.live
+
+        %tr
+          %td{:align => "center", :style => "padding-top:20px"}
+            %table{:style => "margin:0 auto;border-collapse:collapse;border-radius:5px", :width => "560"}
+              %tbody
+                %tr
+                  %td{:colspan => "4", :style => "vertical-align:middle;"}
+                    %table{:style => "width:100%;border-collapse:collapse"}
+                      %tbody
+                        %tr
+                          %td{:align => "center", :style => "vertical-align:middle;padding:22px 0 0 0;"}
+                            %p{:style => "color:#bbb;font-size:14px;margin:0;"} Vegeterians Network Inc.
+                        %tr
+                          %td{:align => "center", :style => "vertical-align:middle;padding:0 0 22px 0;"}
+                            %p{:style => "color:#bbb;font-size:14px;margin:0;"} 300-1095 McKenzie Ave, Victoria, BC, Canada, V8P2L5
+
+        %tr
+          %td{:align => "center", :style => "padding-top:29px;padding-bottom:50px"}
+            %table{:style => "width:100%"}
+              %tbody
+                %tr
+                  %td{:align => "center", :style => ""}
+                    %a{:href => "https://Vegeterians.live", :style => "color:#3ACD80;text-decoration:none;outline:0;", :target => "_blank"}
+                      = image_tag full_pack_url('media/images/mailer/logo_sm_brand.png'), alt: 'Vegeterians.live', border: "0", height: 50, width: 50, :style => "height:50px;width:50px;opacity:0.2;"

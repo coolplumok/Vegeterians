@@ -1,0 +1,46 @@
+%script{src: 'https://code.jquery.com/jquery-3.5.1.min.js'}
+%script{src: "https://js.stripe.com/v3/"}
+- content_for :page_title do
+  = t('settings.membership')
+
+%div
+  %b
+    -membership_level = @subscription_data.present? ? (@subscription_data[:is_pro_membership] ? 'Pro' : (@subscription_data[:is_pro_plus_membership] ? 'Pro plus' : 'Free')) : 'Free'
+  ="Current membership Level :  #{membership_level}"
+%br
+- if @subscription_data.present?
+  %div
+    %b
+      ="Expiration date : "
+    ="#{ @subscription_data[:current_period_end]}"
+  
+  .inline_btn_box
+    - unless @subscription_data[:cancel_at_period_end]
+      = link_to cancel_settings_memberships_path, method: 'post', class: 'button cancel_btn' do
+        ="cancel"
+
+= link_to 'Change subscription plan', 'javascript:;', class: 'subscription_btn_modal button'
+
+= render partial: 'subscription_modal'
+ 
+:javascript
+  $(function() {
+    $(".upgrade_membership").on('click', function(){
+      var price_id = $(this).data('plan-id')
+      $.ajax({
+        url:  "#{create_checkout_session_settings_memberships_path}",
+        type: "post",
+        data: {price_id: price_id}
+      })
+    })
+
+    $('.subscription_btn_modal').click(function() {
+      $('.pricingmodal').addClass('show_modal');
+    });
+
+    $('.close_modal').click(function() {
+      $('.pricingmodal').removeClass('show_modal');
+    });
+  })
+  
+

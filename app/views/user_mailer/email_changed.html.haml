@@ -1,0 +1,25 @@
+%tr
+  %td{:align => "center", :style => ""}
+    %h1{:style => "margin:0;font-weight:bold;font-size:30px;color:#444;text-align:center;"}= t 'devise.mailer.email_changed.title'
+
+%tr
+  %td{:align => "center", :cellspacing => "0", :style => "vertical-align:middle"}
+    %table
+      %tbody
+        %tr
+          %p{:style => "font-size:16px;color:#444;margin:15px 0 0;text-align:center;"}= t 'devise.mailer.email_changed.explanation'
+
+%tr
+  %td{:align => "center", :cellspacing => "0", :style => "vertical-align:middle"}
+    %table
+      %tbody
+        %tr
+          %p{:style => "font-size:16px;font-weight:600;color:#000;margin:15px 0 0;text-align:center;"}= @resource.try(:unconfirmed_email) ? @resource.unconfirmed_email : @resource.email
+
+%tr
+  %td{:align => "center", :cellspacing => "0", :style => "vertical-align:middle"}
+    %table
+      %tbody
+        %tr
+          %p{:style => "font-size:16px;color:#444;margin:15px 0 30px;text-align:center;"}= t 'devise.mailer.email_changed.extra'
+

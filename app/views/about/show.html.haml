@@ -1,0 +1,89 @@
+- content_for :page_title do
+  = site_hostname
+
+- content_for :header_tags do
+  %link{ rel: 'canonical', href: about_url }/
+  = render partial: 'shared/og'
+
+.landing
+  .landing-columns
+    .landing-columns--left
+      .landing__brand
+        = link_to root_url, class: 'brand' do
+          = image_tag '/main.svg', alt: 'Vegeterians.live'
+          / %img(src='/legacy/Vegeterians_logo_full.svg' alt='Vegeterians.live')
+        %h1.brand__tagline=t 'about.tagline'
+        %h1.brand__tagline=t 'about.welcome'
+
+    .landing-columns--right
+      .box-widget
+        = render 'registration'
+.form_content_main
+  %h2 
+    The 
+    %span First 
+    Social Network Dedicated to 
+    %span
+      Health
+  .form_content_row_1
+    .form_content_column_1
+      .form_content_col_margin
+        .form_content_col_cont
+          .form_content_image
+            %span 
+              = image_tag '/tree_Vegeterians.svg', alt: 'Vegeterians.live'
+          .form_row_content
+            %h3
+              %span
+                Exclusively for Health
+            .form_cont_desc
+              Vegeterians Network is the first social network built exclusively for the health and wellness community. 
+    .form_content_column_2
+      .form_content_col_margin
+        .form_content_col_cont
+          .form_content_image
+            %span
+              = image_tag '/social_Vegeterians.svg', alt: 'Vegeterians.live'
+          .form_row_content
+            %h3
+              %span
+                Uncensored
+            .form_cont_desc
+              You are free to speak your mind about holistic health without fear of being censored or deplatformed.
+    .form_content_column_3
+      .form_content_col_margin
+        .form_content_col_cont
+          .form_content_image
+            %span
+              = image_tag '/social_love_Vegeterians.svg', alt: 'Vegeterians.live'
+          .form_row_content
+            %h3
+              %span
+                Private & Open Source
+            .form_cont_desc
+              We are committed to our members privacy, with private profiles, groups,  encrypted chat and open source code.
+  .form_content_row_2
+    .form_content_2_margin
+      .form_cont_2_image
+        %span.form_cont_2_img_wr
+          = image_tag '/Vegeterians_live.svg', alt: 'Vegeterians.live'
+  .form_content_row_3
+    .form_content_col_3_1
+      .form_content_img_3_1
+        %span.form_cont_3_img_wr
+          = image_tag '/Vegeterians-Laptop.svg', alt: 'Vegeterians.live'
+    .form_content_col_3_2
+      .form_content_cont_3_2
+        .form_content_text_3_2
+          %p
+            %a{:href => "https://Vegeterians.live", :rel => "noopener noreferrer", :target => "_blank"}
+              %strong 
+                Vegeterians.Live
+            is our free, secure portal for the wellness community, a place to learn, gather, talk health, and organize.
+          %p
+            Holistic health doctors, health professionals, researchers and influencers are increasingly being censored and deplatformed by the big social networks. We value diversity over monopoly on health knowledge, encourage open dialogue and an evidence-based approach to health solutions.
+  .form_content_row_2
+    .form_content_2_margin
+      %h2 
+        Take Back Your 
+        %span Health Freedom!

@@ -1,0 +1,6 @@
+= render 'stream_entries/meta', stream_entry: @stream_entry, account: @account
+
+.grid
+  .column-0
+    .activity-stream.h-entry
+      = render partial: "stream_entries/#{@type}", locals: { @type.to_sym => @stream_entry.activity, include_threads: true }

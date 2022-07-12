@@ -1,0 +1,28 @@
+%tr
+  %td{:align => "center", :style => ""}
+    %h1{:style => "margin:0;font-weight:bold;font-size:20px;color:#444;text-align:center;"}= t 'user_mailer.welcome.title', name: @resource.account.username
+
+%tr
+  %td{:align => "center", :cellspacing => "0", :style => "vertical-align:middle"}
+    %table
+      %tbody
+        %tr
+          %p{:style => "font-size:16px;color:#444;margin:15px 0;text-align:left;"} We are pleased to have you join our holistic health community.
+%tr
+  %td{:align => "center", :cellspacing => "0", :style => "vertical-align:middle"}
+    %table
+      %tbody
+        %tr
+          %p{ :style => "margin:0 0 15px 0;text-align:left;" }
+            %span{ :style => "font-size:16px;color:#444;text-align:left;" } Please click below to get started with your profile setup, follow top health experts, join groups and meet new friends. 
+          %p{ :style => "margin:0 0 15px 0;text-align:left;" }
+            %span{ :style => "font-size:16px;color:#444;text-align:left;" } In these times, staying healthy, informed and connected has never been more important. 
+          %p{ :style => "margin:0 0 15px 0;text-align:left;" }
+
+%tr
+  %td{:align => "center", :cellspacing => "0", :style => "vertical-align:middle;padding-top:10px;padding-bottom:30px;"}
+    %table{ align: 'center', cellspacing: 0, cellpadding: 0 }
+      %tbody
+        %tr
+          %td{ :style => "background-color:#e92626;height:56px;border-radius:9999px;color:#fff; " }
+            = link_to "Let’s get started!", "https://Vegeterians.live/home", :style => "height:56px;padding:20px 30px;text-decoration:none;color:#fff;font-size:16px;margin:0;"

@@ -1,0 +1,76 @@
+- content_for :page_title do
+  = t('verifications.requests.title')
+
+- if @current_account.is_verified?
+  .alert.alert-info
+    = t('verifications.requests.already_verified_html')
+- elsif @otp_show
+  = simple_form_for @account_verification_request, method: :post, url: settings_verifications_verifycode_path do |f|
+
+    = render 'shared/error_messages', object: @account_verification_request
+
+    = f.hidden_field :account
+
+    .field-group
+      = f.input :code, wrapper: :with_label, value: '', label: t('verifications.requests.code'), input_html: { 'aria-label' => t('verifications.requests.code') }, placeholder: t('verifications.requests.code'), :autocomplete => 'off', required: true, as: :string
+    
+    .actions
+      = f.button :button, t('verifications.requests.verify_code'), type: :submit, style: 'margin-bottom: 0;'
+  
+  = simple_form_for @account_verification_request, method: :post, url: settings_verifications_sendcode_path do |f|
+
+    = render 'shared/error_messages', object: @account_verification_request
+
+    = f.hidden_field :account
+
+    = f.hidden_field :phone_number
+
+    .actions
+      = f.button :button, t('verifications.requests.resubmit')
+- else
+  = simple_form_for @account_verification_request, method: :post, url: settings_verifications_sendcode_path do |f|
+
+    = render 'shared/error_messages', object: @account_verification_request
+
+    = f.hidden_field :account
+
+    .field-group
+      = f.input :phone_number, wrapper: :with_label, label: t('verifications.requests.phone_number'), input_html: { 'aria-label' => t('verifications.requests.phone_number') }, :autocomplete => 'off', required: true, as: :string
+
+      %p.hint= t('verifications.requests.phone_number_description')
+
+    .actions
+      = f.button :button, t('verifications.requests.submit'), type: :submit
+
+-# - content_for :page_title do
+-#   = t('verifications.requests.title')
+
+-# - if @current_account.is_verified?
+-#   .alert.alert-info
+-#     = t('verifications.requests.already_verified_html')
+-# - elsif @account_verification_request.persisted?
+-#   .alert.alert-success
+-#     = t('verifications.requests.already_requested')
+-# - elsif not @current_account.is_pro? || @current_account.is_proplus?
+-#   .alert.alert-info
+-#     = t('verifications.requests.only_allowed_for_pro')
+-# - else
+-#   = simple_form_for @account_verification_request, url: settings_verifications_requests_path do |f|
+-#     = t('verifications.requests.explanation_html')
+
+-#     %br
+
+-#     = render 'shared/error_messages', object: @account_verification_request
+
+-#     = f.hidden_field :account
+
+-#     .fields-group
+-#       = f.input :image, wrapper: :with_label, input_html: { accept: 'image/png' }, hint: t('verifications.requests.image_hint')
+
+-#     .actions
+-#       = f.button :button, t('verifications.requests.submit'), type: :submit
+
+:javascript
+  function onCloseAlert(element) {
+    element.parentElement.style.display = 'none'
+  }

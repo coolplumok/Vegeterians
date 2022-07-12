@@ -1,0 +1,11 @@
+<%if @success %>
+	var stripe = Stripe("<%=ENV['STRIPE_PUBLISHABLE_KEY']%>");
+	stripe.redirectToCheckout({
+	  sessionId: "<%= @session_id %>"
+	}).then((response) => {
+	}).catch(error => {
+	  $("#alert").text(error)
+	});
+<%else%>
+  $('#alert').text("<%= @message %>")
+<%end%>	

@@ -1,0 +1,2 @@
+Fabricator(:health_expert_application_request) do
+end

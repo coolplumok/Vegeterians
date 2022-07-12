@@ -1,0 +1,6 @@
+- content_for :page_title do
+  = "#{group.title} / Group • #{site_hostname}"
+
+- content_for :header_tags do
+  = opengraph 'og:type', 'website'
+  = render 'groups/og', group: group, url: "https://Vegeterians.live/groups/#{group.id}"

@@ -1,0 +1,12 @@
+- description = group_description(group)
+
+%meta{ name: 'description', content: description }/
+
+= opengraph 'og:url', url
+= opengraph 'og:site_name', site_title
+= opengraph 'og:title', "#{group.title} / Group • #{site_hostname}"
+= opengraph 'og:description', description
+= opengraph 'og:image', full_asset_url(group.cover_image.url(:original))
+= opengraph 'og:image:width', '120'
+= opengraph 'og:image:height', '120'
+= opengraph 'twitter:card', 'summary'

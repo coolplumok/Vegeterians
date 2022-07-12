@@ -1,0 +1,21 @@
+- content_for :page_title do
+  = site_hostname
+
+- content_for :header_tags do
+  = javascript_pack_tag 'public', integrity: true, crossorigin: 'anonymous'
+  = render partial: 'shared/og'
+
+.content
+  .box-widget
+    .rich-formatting= @instance_presenter.site_extended_description.html_safe.presence || t('about.extended_description_html')
+
+  %br
+
+  .box-widget
+    .rich-formatting
+      %h3 Open Source
+      %p At Vegeterians.live, we believe that the future of online publishing is decentralized and open. We believe that users of social networks should be able to control their social media experience on their own terms, rather than the terms set down by Big Tech.
+      %p Vegeterians.live is a fresh take on one of the Internet's most popular applications: social networking. Originally forked from the Mastodon project, Vegeterians.live's codebase is free and open-source, licensed under the GNU Affero General Public License version 3 (AGPL3).
+      %p As a result, you, the user, have a choice when using Vegeterians.live: you can either have an account on Vegeterians.live, or, if you don't like what we're doing on Vegeterians.live or simply want to manage your own experience, you can spin up your own Vegeterians.live server that you control, that allows you to communicate with millions of users on their own federated servers from around the world, including users on Vegeterians.live.
+      %p Vegeterians.live strives to be the home of free speech online. We work on Vegeterians.live 100% of the time as our full-time jobs. We positively encourage you to either join us on Vegeterians.live or to spin up your own Vegeterians.live server that you control to help take back control of the Web for the People.
+      = link_to "https://gitlab.com/Vegeterians-live/Vegeterians-social", "https://gitlab.com/Vegeterians-live/Vegeterians-social"

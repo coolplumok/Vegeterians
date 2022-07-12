@@ -1,0 +1,16 @@
+!!!
+%html{ lang: I18n.locale }
+  %head
+    %meta{ content: 'text/html; charset=UTF-8', 'http-equiv' => 'Content-Type' }/
+    %meta{ charset: 'utf-8' }/
+    %title= safe_join([yield(:page_title), Setting.default_settings['site_title']], ' - ')
+    %meta{ content: 'width=device-width,initial-scale=1', name: 'viewport' }/
+    = stylesheet_pack_tag 'common', media: 'all'
+    = javascript_pack_tag 'common', integrity: true, crossorigin: 'anonymous'
+    = javascript_pack_tag 'error', integrity: true, crossorigin: 'anonymous'
+  %body.error
+    %div{ :style => "padding: 60px; max-width: 660px;" }
+      %a{ :href => '/' }
+        = image_pack_tag 'logo.svg', alt: 'Vegeterians.live', width: '100px'
+      %div{ :style => "margin-top: 20px; line-height: 2rem; font-family: system-ui, -apple-system, BlinkMacSystemFont, Roboto, sans-serif;" }
+        %h1= yield :content

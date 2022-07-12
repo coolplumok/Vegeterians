@@ -1,0 +1,42 @@
+- content_for :header_tags do
+  = javascript_pack_tag 'public', integrity: true, crossorigin: 'anonymous'
+  %link(rel='stylesheet' href='/legacy/common.css')
+  %link(rel='stylesheet' href='/legacy/default.css')
+
+- content_for :content do
+  .public-layout
+    .background-svg
+    - unless @hide_navbar
+      %nav.header
+        .header-container
+          .nav-left
+            = link_to root_url, class: 'brand' do
+              %img(src='/logo.svg' alt='Vegeterians.live')
+            =# link_to t('home'), root_url, class: 'nav-link optional'
+            =# link_to t('about.about_this'), about_path, class: 'nav-link'
+            =# link_to 'Vegeterians.News', 'https://Vegeterians.news', class: 'nav-link'
+          .nav-center
+          .nav-right
+            - if user_signed_in?
+              = link_to t('settings.back'), root_url, class: 'nav-link nav-button webapp-btn'
+            - else
+              .hidden-sm
+                = render 'about/login'
+              .visible-sm
+                = link_to t('auth.login'), new_user_session_path, class: 'webapp-btn nav-link nav-button'
+
+    .container= yield
+
+    .footer
+      .footer-container
+        .copyright
+          %span= "2020 Vegeterians Network Inc. All Rights Reserved."
+        %ul
+          %li=# link_to 'Terms of Sale', about_sales_path
+          %li=# link_to 'Copyright', about_copyright_path
+          %li=# link_to 'Source Code', 'https://github.com/Vegeteriansnetwork/Vegeterianslive', target: '_blank'
+          %li=# mail_to 'support@Vegeterians.live', 'Press'
+          %li=# link_to 'Terms of Service', about_tos_path
+          %li=# link_to 'Privacy Policy', about_privacy_path
+
+= render template: 'layouts/application'

@@ -1,0 +1,6 @@
+- content_for :page_title do
+  = t('monthly_funding.title')
+
+= form_tag settings_expenses_url, :method => :post do
+  = text_field_tag "amount", "", placeholder: "0-100", :value => @amount
+  = submit_tag "Submit"

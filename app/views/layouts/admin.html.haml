@@ -1,0 +1,24 @@
+- content_for :header_tags do
+  = javascript_pack_tag 'public', integrity: true, crossorigin: 'anonymous'
+  %link(rel='stylesheet' href='/legacy/common.css')
+  %link(rel='stylesheet' href='/legacy/default.css')
+
+- content_for :content do
+  .admin-wrapper
+    .sidebar-wrapper
+      .sidebar
+        -# = link_to root_path do
+        -# homehack
+        = link_to '/home' do
+          = image_pack_tag 'logo.png', class: 'logo', alt: 'Vegeterians.live'
+
+        = render_navigation
+    .content-wrapper
+      .content
+        %h2= yield :page_title
+
+        = render 'application/flashes'
+
+        = yield
+
+= render template: 'layouts/application'

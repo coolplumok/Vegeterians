@@ -1,0 +1,17 @@
+---
+en:
+  activerecord:
+    attributes:
+      poll:
+        expires_at: Deadline
+        options: Choices
+    errors:
+      models:
+        account:
+          attributes:
+            username:
+              invalid: Only letters, numbers and underscores. No spaces.
+        status:
+          attributes:
+            reblog:
+              taken: of status already exists
