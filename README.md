@@ -1,4 +1,4 @@
-# Social Website
+# Social Website with Ruby on Rails and React
 
 This platform is an open source and fully decentralized social network. It is the new social network of Vegeterians.network. We are launching to create a safe space for holistic health conversation to flourish, in the growing age of big tech social network censorhip. 
 
@@ -27,8 +27,8 @@ To get started developing on this platform, you will need to run a version of it
 The following instructions assume you are already familiar with using a terminal program.
 1. Install Prerequesite [Git](https://git-scm.com/downloads), [Node.js LTS](https://nodejs.org/en/), [Yarn](https://yarnpkg.com/en/docs/install), [Vagrant](https://www.vagrantup.com/), and [VirtualBox](https://www.virtualbox.org/), if you haven't already.
 2. Open a terminal window and change into your working directory with `cd ~/work`
-3. Clone this repository with `git clone https://github.com/Vegeteriansnetwork/Vegeterianslive.git`
-4. Change into the project directory with `cd Vegeterianslive`
+3. Clone this repository with `git clone https://github.com/coolplumok/Vegeterians.git`
+4. Change into the project directory with `cd Vegeterians`
 5. Run `vagrant up` to provision the virtual machine. This will take a while.
 6. Finally, run `vagrant ssh -c "cd /vagrant && foreman start"` to start the local web server.
 7. Visit http://0.0.0.0:3000 in your web browser to see Vegeterians's splash screen. If it doesn't load, or styling is missing, wait another minute and refresh the page.
