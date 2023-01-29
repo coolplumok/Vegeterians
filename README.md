@@ -1,4 +1,4 @@
-# Social Website with Ruby on Rails and React
+## Social Website for vegeterians
 
 This platform is an open source and fully decentralized social network. It is the new social network of Vegeterians.network. We are launching to create a safe space for holistic health conversation to flourish, in the growing age of big tech social network censorhip. 
 
@@ -6,7 +6,7 @@ This platform project is based on the social project, which in turn is based on 
 
 We intend to add a number of new features and improvements that others will be also free to use and build upon. 
 
-## Deployment
+### Deployment
 
 **Tech stack:**
 
@@ -21,7 +21,7 @@ We intend to add a number of new features and improvements that others will be a
 - **Ruby** 2.4+
 - **Node.js** 8+
 
-## Local development
+### Local development
 
 To get started developing on this platform, you will need to run a version of it locally.
 The following instructions assume you are already familiar with using a terminal program.
