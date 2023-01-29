@@ -2,7 +2,7 @@
 
 This platform is an open source and fully decentralized social network. It is the new social network of Vegeterians.network. We are launching to create a safe space for holistic health conversation to flourish, in the growing age of big tech social network censorhip. 
 
-This platform project is based on the Gab-Social project, which in turn is based on [Mastodon](https://github.com/tootsuite/mastodon) project, and is licensed under the terms and conditions of AGPL-3.0. We selected to fork Gab, despite controversy surrounding their platform, simply because they had developed group feature and had implemented some features to allow for paid premium memberships (a freemium model), as we did not want to depend on donations for viability. 
+This platform project is based on the social project, which in turn is based on [Mastodon](https://github.com/tootsuite/mastodon) project, and is licensed under the terms and conditions of AGPL-3.0. We despite controversy surrounding their platform, simply because they had developed group feature and had implemented some features to allow for paid premium memberships (a freemium model), as we did not want to depend on donations for viability. 
 
 We intend to add a number of new features and improvements that others will be also free to use and build upon. 
 
